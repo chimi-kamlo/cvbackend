@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV</title>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+<style>
+
+    body{
+     padding:0 ;
+      margin:0;
+      height:100vh ;
+      width:500px ;
+      font-family: Yeseva One, Canva Sans, Della Respira;
+      }
+    .contain {
+        
+        width: 208.7mm;
+        height: 295.7mm;
+        position: relative;
+        
+    }
+    .contain_left{
+        width: 86.3mm;
+        height: 293.6mm;
+        background-color: rgba(100, 0, 50, 1);
+        color:white;
+        margin-top:-6.8mm;
+        padding-top:10mm;
+        
+
+        
+    }
+    .contain_right{
+        width: 121mm;
+        height: 293mm;
+        position: absolute;
+        right:0;
+        top:0;
+        bottom:0;
+        padding-top:7mm;
+   
+    }
+    .div_nom{
+        text-align: center;
+        width: 85mm;
+        height: 30mm;
+        
+        
+    }
+    .div_nom div{
+        margin-top:-5mm ;
+    }
+    
+    .trait{
+        width: 10mm;
+        float: right;
+      }
+      .coordonnees{
+        width: 82mm;
+       
+        padding-left:3mm;
+        margin-top:-2mm
+        
+      }
+      .localisation,.contain_email ,.contain_telephone{
+        display: flex;
+         align-items:center;
+         
+        }
+        .icon{
+            float: left;
+            margin-right:5mm;
+        }
+        .espace{
+            margin-top:5mm;
+          }
+          .contain_skills,.contain_langues,.loisir{
+            padding-left:3mm;
+          }
+        .squar_icon{
+            float: left;
+            margin-right:2mm;
+            margin-bottom:-5mm
+        }
+        skills_text{
+            margin-top:-10mm;
+            display:inline-block;
+            
+          }
+          .loisir_items,.langue{
+            display:inline-block;
+            margin-top:-10mm;
+         }
+         hr {
+            
+             margin-top:-5mm;
+             
+         }
+        .contain_profil{
+            margin-top:10mm;
+        }
+         .contain_profil,.profil_text{
+            
+            padding-left:3mm;
+         }
+         .contain_employement,.contain_date,.contain_education,.contain_certification{
+            padding-left:3mm;
+         }
+         .poste,.posteCertif{
+            margin-left:10mm
+         }
+         .employeur,.description,.ecole{
+            margin-left:33.2mm
+         }
+         .date,.employeur,.ecole{
+            color:rgba(187,0,187,1);
+          }
+          .coordonnees{
+            margin-top: -10mm;
+          }
+</style>
+</head>
+<body>
+    <div class="contain">
+        <div class="contain_left">
+            <div class="div_nom">
+                <h1> {{nom}} {{prenom}}</h1>
+                <div> {{profession}}</div>
+            </div>
+
+            <div class="coordonnees">
+                <div class="titre">  <h2 >personal details  </h2></div>
+
+                <div class="contain_email"><span class="icon"><svg  fill="white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span> <p class="email"> {{email}}</p></div>
+     
+               <div class= "contain_telephone"><span class="icon"><svg   fill="white" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span> <span class="telephone">{{telephone}}</span></div>
+              <div class="localisation espace"> <span class="icon"><svg  fill="white" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></span><span class="adresse"> {{adresse}}</span></div>
+         </div>
+      
+         <div class="contain_skills">
+            <div class="titre">  <h2> skills  </h2> </div>
+                 {{#each competences}}
+             
+             <div class="skills_items"><span class= "squar_icon"><svg   fill="gray"  width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"/></svg></span> <p class="skills_text"> {{this}}</p></div>
+           {{/each}}
+        </div>
+         
+            
+          {{#if langues}}
+        <div class="contain_langues">
+            <div class="titre">  <h2> languages  </h2> </div>
+            {{#each langues}}
+            <p class="langue">{{this}}</p> <br/>
+            {{/each}}
+          </div>
+          
+     {{/if}}
+         
+       {{#if loisirs}}
+          <div class="loisir">
+            <div class="titre">  <h2> hobbys  </h2> </div>
+            {{#each loisirs}}
+            <p >{{this}}</p>
+            {{/each}}
+        </div>
+     {{/if}}
+        </div>
+
+
+    <div class="contain_right">
+
+        <div class="contain_profil">
+     
+            <div class="titres">   <h2>Profil</h2> <hr  ></div></div>
+            {{#if résumé}}
+           <div class="profil_text">
+            {{résumé}}
+            </div>
+            {{/if}}
+          
+           <div class="profil_text">
+            {{resume}}
+            </div>
+            
+           
+         <div class="contain_employement">
+            <div class="titres">   <h2>Employement</h2> <hr  ></div></div>
+                       
+            <div class="employement">
+                {{#each experience}}
+                        <div class="contain_date"><span class="date">{{this.date_debut}}-{{this.date_fin}}</span> <span class="poste">{{this.poste}}</span></div>
+              <span class="employeur">{{this.employeur}}</span>
+              <p class="description"> {{this.description}}</p>
+                        {{/each}}
+              
+              
+            </div>
+
+            <div class="contain_education">
+                <div class="titres">   <h2>Education</h2> <hr class=" LongEd" ></div></div>
+                <div class="education">
+                  {{#each education}}
+                  <div class="contain_date"><span class ="date">{{this.date}}</span> <span class="poste">{{this.diplome}}</span></div>
+                  <span class="ecole">{{this.ecole}}</span>
+    
+                   {{/each}}
+                </div>
+
+                <div class="contain_certification">
+                    <div class="titres">   <h2>Certification</h2> <hr class=" LongC" ></div></div>
+                    <div class="certification">
+                       {{#each certifications}}
+                      <div class="contain_date"><span class="date">{{this.date}}</span> <span class="posteCertif">{{this.nom}}</span></div>
+                      <span class="ecole">{{this.etablissement}}</span>
+                      <p class="description"> {{this.description}}</p>
+                      {{/each}}
+                      
+                    </div>
+
+    </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

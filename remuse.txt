@@ -1,0 +1,37 @@
+
+
+// route pour l'authentification(le port peut etre modifi� en fonction de votre environnement)
+     
+   http://localhost:3000/login
+
+// route pour inscription
+
+  http://localhost:3000/inscription
+
+// route  pour enregistrer les informations personnelles de l'utilisateur
+
+  http://localhost:3000/perso
+
+//route pour enregistrer les experiences
+
+ http://localhost:3000/experience
+
+//route pour enregistrer les loisirs
+
+http://localhost:3000/loisir
+
+//route pour enregistrer les competences
+
+http://localhost:3000/competence
+
+//route pour enregistrer les informations sur l'education
+
+http://localhost:3000/education
+
+//route pour les langues
+
+http://localhost:3000/langue
+
+//route pour recuperer un utilisateur
+  http://localhost:3000/inscription/:telephone
+

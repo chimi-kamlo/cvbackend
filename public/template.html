@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        body{
+            padding:0 ;
+          margin:0;
+          height:100vh ;
+          width:500px ;
+          display:flex;
+          font-family: Yeseva One, Canva Sans, Della Respira;
+          }
+          .top_container{
+            height:100% ;
+            flex:4;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+             background-color: #b2b1b0;
+          }
+          .description_com,.certif_description
+          {
+            text-align: justify;
+          }
+          
+          .bottom_container{
+            height:100% ;
+            flex:6;
+           
+          }
+          .nom{
+            display:flex;
+            flex-wrap: wrap;
+            // border:1px solid red;
+          height:100px;
+          width:90% ;
+          max-height:100px;
+          max-width:90%;
+           align-items:center;
+           justify-content: start;
+           margin-top:30px;
+           font-size: 30px;
+              text-transform: capitalize;
+             color:#1c1b1b;
+              font-weight: bold;
+           
+          }
+          .poste{
+            height:30px;
+          width:90% ;
+          max-height:300px;
+          max-width:90%;
+          text-align: start;
+           letter-spacing: 5px;
+           margin-top:-3px;
+          }
+          .contain_image{
+             height:200px;
+             width:60% ;
+              border-radius: 50%;
+              display: flex;
+            background-color: white;
+            margin-bottom:10px;
+            // border:1px solid red;
+            
+            }
+           .img{
+            max-height:100%;
+          max-width:100%;
+          border-radius: 50%;
+          object-fit: cover;
+            object-position: center;
+            }
+          .contact,.competence,.certification,.langue,.loisir{
+          width:90% ;
+          }
+          .localisation, {
+            margin-top:-10px;
+             display: flex;
+              align-items:center;
+             
+            
+          }
+          .adresse{
+             display: flex;
+              align-items:center;
+          }
+          
+          .icon{
+            margin-right:10px;
+              max-height:40px;
+              max-width:40px;
+              // border:1px solid red;
+            
+          }
+          .contact h2,.competence h2 ,
+          .certification h2,.langue h2, .loisir h2 ,.education h2,.experience h2,.realisation h2{
+            text-transform:uppercase;
+              letter-spacing:5px;
+          }
+          .experience,.education,.realisation{
+            margin-left:10px;
+            
+            
+          }
+          .education{
+            margin-top:50px
+          }
+          hr {
+               border:1px solid #696867; 
+                margin-bottom:-10px;
+                margin-top:-10px;
+                
+            }
+            .bottom_container{
+              padding-right:5px;
+              background-color: #f1ebe6;
+              
+            }
+            .certif_description,.description_com{
+              margin-left:20px;
+              margin-top:-10px; 
+              
+            }
+          .donnee{
+            margin-top:-15px;
+          }
+          .fa-square{
+            margin-right:5px;
+          }
+          .date{
+            margin-top:-30px;
+            margin-left:20px;
+            
+          }
+          .description_exp{
+            text-align: justify;
+               margin-left:20px;
+          }
+    </style>
+</head>
+<body>
+    <div class="top_container">
+        {{#if nom}}
+            <div class="nom">{{nom}} {{prenom}}</div>
+        {{else}}
+            <div class="nom">pas de nom</div>
+        {{/if}}
+        
+        {{#if profession}}
+            <p class="poste">{{profession}}</p>
+        {{else}}
+            <p class="poste">pas de profession</p>
+        {{/if}}
+        
+        <div class="contain_image">
+            <svg width="200" height="200" class="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z"/></svg>
+                <!-- Insert your SVG code here -->
+            </svg>
+        </div>
+        
+        <div class="contact">
+            <h2> contact</h2>
+            <p class="localisation"> <span class="icon"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Insert your SVG code here --></svg></span>{{adresse}}</p>
+            <p class= "telephone"><span class="icon"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Insert your SVG code here --></svg></span>{{telephone}}</p>
+            <p class="adresse"><span class="icon"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Insert your SVG code here --></svg></span>{{email}}</p>
+        </div>
+        
+        <div class="competence">
+            <h2>competences</h2>
+            {{#each competences}}
+                <p class=" donnee">{{this}}</p>
+            {{/each}}
+        </div>
+        
+        {{#if certification}}
+            <div class="certification">
+                <h2>certifications</h2>
+                {{#each certifications}}
+                    <p class=" donnee">
+                        <span>{{intitule}}</span> - <span>{{centre_formation}}</span> - <span>{{dat}}</span>
+                    </p>
+                    {{#if description}}
+                        <p class="certif_description">{{description}}</p>
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/if}}
+        
+        {{#if langues}}
+            <div class="langue">
+                <h2>langues</h2>
+                {{#each langues}}
+                    <p class="donnee">{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        
+        {{#if loisirs}}
+            <div class="loisir">
+                <h2>interets</h2>
+                {{#each loisirs}}
+                    <p class="donnee">{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+    
+    <div class="bottom_container">
+        <div class="education">
+            <h2>FORMATION</h2>
+            <hr>
+            {{#each education}}
+                <p class="info">
+                    <span>{{diplome}}</span> - <span>{{ecole}}</span> - <span>{{date}}</span>
+                </p>
+            {{/each}}
+        </div>
+        
+        <div class="experience">
+            <h2>EXPERIENCE PROFESSIONNELLE</h2>
+            <hr>
+            {{#each experience}}
+                <p>{{poste}} chez {{employeur}}, {{localisation}}</p>
+                <span class="date">{{date_debut}} - {{date_fin}}</span>
+                {{#if description}}
+                    <p class="description_exp">{{description}}</p>
+                {{/if}}
+            {{/each}}
+        </div>
+        
+        {{#if projet}}
+            <div class="realisation">
+                <h2>REALISATIONS</h2>
+                <hr>
+                {{#each projet}}
+                    <p>{{nom}} chez {{entreprise}} - {{dat}}</p>
+                    {{#if description}}
+                        <p class="description_exp">{{description}}</p>
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+    
+      
+</body>
+</html>

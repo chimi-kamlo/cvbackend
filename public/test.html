@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head><title>SALUT LE MONDE</title></head>
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+      const serverUrl = 'http://localhost:3000';
+      const socket = io(serverUrl);
+
+      socket.on('connect', () => {
+        console.log('Connected to server');
+        const userId = 1;
+        let jobDescription = "Une entreprise locale recherche un développeur front-end expérimenté, maîtrisant les technologies suivantes : ReactJS et React Native. De plus, une connaissance préalable de l'utilisation de Figma ou Photoshop est requise.";
+        socket.emit('cvLocalClientEvent', { userId, jobDescription });
+     });
+     
+       const userId = 1;
+      let jobDescription = "Une entreprise locale recherche un développeur front-end expérimenté, maîtrisant  les technologies suivantes : ReactJS et React Native. De plus, une connaissance préalable de l'utilisation de Figma ou Photoshop est requise "
+      socket.emit('cvLocalClientEvent',{userId,jobDescription})
+
+      socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+     });
+    </script>
+   <body><h1>Hello world</h1></body>
+</html> 

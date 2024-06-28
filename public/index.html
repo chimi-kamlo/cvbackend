@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html>
+   <head><title>Hello world</title></head>
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+      const serverUrl = 'http://localhost:3000';
+        
+        const socket = io(serverUrl);
+      socket.on('resumeEvent',function(data){
+        document.body.innerHTML = '';
+        document.write(data.donnees);
+        
+      });
+       const userId = 1;
+      const domaine = "le reseau informatique"
+      socket.emit('resumeClientEvent', {user});
+      socket.emit('planClientEvent',{user,domaine})
+      socket.emit('CompetenceSuggestionClientEvent',{user}) 
+       ID = '42C06069-39A0-4FAE-B1A1-87DBCD7ADFEF'
+       // ID2 = '7B7D5BA5-5AED-4935-8EC3-CEC642C4581E'
+      let jobDescription = "Une entreprise locale recherche un développeur front-end expérimenté, maîtrisant  les technologies suivantes : ReactJS et React Native. De plus, une connaissance préalable de l'utilisation de Figma ou Photoshop est requise "
+      socket.emit('cvClientEvent',{userId,jobDescription}) 
+      socket.emit('cvLocalClientEvent',{userId,jobDescription})
+      const lien = 'https://www.google.com/'
+      socket.emit('cvScrapingClientEvent',{user,lien})  
+   </script>
+   <body>Hello world</body>
+</html> 
