@@ -18,7 +18,7 @@ module.exports =  (sequelize) => {
       allowNull: false,
     },
     reponse: {
-      type: DataTypes.JSON(255),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     date_reponse: {
