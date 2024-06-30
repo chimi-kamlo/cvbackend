@@ -13,7 +13,6 @@ const fs = require('fs');
 const handlebars = require('handlebars');
 const { v4: uuidv4 } = require('uuid');
 const pdf = require("pdf-creator-node")
-const htmlDocx = require('html-docx-js');
 const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 
