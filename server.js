@@ -150,7 +150,7 @@ let user_final = {certifications,competences,education,experiences} = user
 
  const profession = await db.Info_perso.findOne({
   where: {
-    userId:data.user
+    userId:data
   },
   attributes: ['profession']
 })
