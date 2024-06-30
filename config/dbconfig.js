@@ -4,7 +4,7 @@ const config = require("dotenv").config();
 
 //**** connexion a la bd */
 const sequelize = new Sequelize(
-  "curriculum",
+   process.env.BD_NAME ,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
   {
