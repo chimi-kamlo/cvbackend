@@ -3,6 +3,7 @@ const db = require("../config/dbconfig")
 const Info_perso = db.Info_perso;
 
 const multer = require('multer');
+const path = require('path');
 //** 1. create users */
 
 exports.createUser= async (req, res) =>{
