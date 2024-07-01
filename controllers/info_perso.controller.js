@@ -65,24 +65,39 @@ exports.createUser= async (req, res) =>{
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "Images");
+    cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
-exports.upload = multer({
-  storage: storage,
-  limits: { fileSize: "1000000" },
-  fileFilter: (req, file, cb) => {
-    const fileTypes = /jpeg|jpg|png|gif/;
-    const mimeType = fileTypes.test(file.mimetype);
-    const extname = fileTypes.test(path.extname(file.originalname));
+eexports.upload = multer({storage: storage}).single("image");
 
-    if (mimeType && extname) {
-      return cb(null, true);
-    }
-    cb("Give proper files formate to upload");
-  },
-}).single("image");
+
+// Route de mise à jour des informations personnelles
+
+exports.updateInfo_perso = async (req, res) => {
+  const infoId = req.params.id;
+  const updateData = req.body;
+  console.log(req.body)
+  try {
+    if (req.file) {
+      updateData.image = req.file.path; 
+  }
+      const info = await db.Info_perso.findOne({where:{userId:infoId}});
+
+      if (!info) {
+          return res.status(404).json({ message: 'user not found' });
+      }
+
+      // Mettre à jour les champs
+      await info.update(updateData);
+      
+
+      res.status(200).send({ message: 'succes', info });
+  } catch (error) {
+      console.error('erreur lors de la modification:', error);
+      res.status(500).send({ message: 'Server error', error });
+  }
+};

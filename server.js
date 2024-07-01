@@ -31,6 +31,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static('uploads'));
 
 //** importation des routes */
 

@@ -139,5 +139,6 @@ const persoCtlr = require("../controllers/info_perso.controller")
  * 
  */ 
 router.post("", persoCtlr.upload, persoCtlr.createUser);
+router.put('/update-info/:id', persoCtlr.upload,persoCtlr.updateInfo_perso)
 
 module.exports = router;
