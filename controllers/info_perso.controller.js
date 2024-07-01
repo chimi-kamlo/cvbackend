@@ -72,7 +72,7 @@ const storage = multer.diskStorage({
   },
 });
 
-eexports.upload = multer({storage: storage}).single("image");
+exports.upload = multer({storage: storage}).single("image");
 
 
 // Route de mise à jour des informations personnelles
